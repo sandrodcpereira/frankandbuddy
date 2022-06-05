@@ -33,6 +33,7 @@ header img {
   display: block;
   height: 400px;
   margin: 0 auto;
+  pointer-events: none;
 }
 header,
 footer,
@@ -197,6 +198,7 @@ footer:hover .footer-head {
 }
 .cards .card.disabled {
   cursor: not-allowed;
+  pointer-events: none;
 }
 .cards .card.disabled img,
 .cards .card.disabled h3,
@@ -227,6 +229,7 @@ footer:hover .footer-head {
 }
 .cards .card img {
   width: 100%;
+  pointer-events: none;
 }
 nav {
   display: flex;
