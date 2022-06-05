@@ -149,6 +149,26 @@ header .button.secondary {
 #contact ul li a:hover {
   transform: scale(1.2);
 }
+footer .footer-hands,
+footer .footer-head {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -120px;
+  position: fixed;
+  pointer-events: none;
+}
+footer .footer-head {
+  width: 104px;
+  transition: bottom 0.3s cubic-bezier(0.42, -0.01, 0.44, 1.27) 0.4s;
+}
+footer .footer-hands {
+  width: 144px;
+  transition: bottom 0.2s ease-out;
+}
+footer:hover .footer-hands,
+footer:hover .footer-head {
+  bottom: -6px;
+}
 .cards {
   display: flex;
   flex-direction: row;
@@ -203,6 +223,7 @@ header .button.secondary {
 }
 .cards .card p.cta {
   margin: auto 0 0 0;
+  text-decoration: underline;
 }
 .cards .card img {
   width: 100%;

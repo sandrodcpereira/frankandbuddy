@@ -147,8 +147,7 @@ nav {
 			text-transform: uppercase;
 			font-size: 24px;
 		}
-	}
-		
+	}	
 }
 
 header {
@@ -171,7 +170,6 @@ header {
 			border: 2px solid @dark-grey;
 		}
 	}
-
 }
 
 #about {
@@ -202,11 +200,39 @@ header {
 					transform: scale(1.2);
 				}	
 			}
-
-			
 		}
 	}
 }
+
+
+footer {
+	.footer-hands, .footer-head {
+		left: 50%;
+    transform: translateX(-50%);
+    bottom: -120px;
+		position: fixed;
+		pointer-events: none;
+	}
+
+	.footer-head {
+		width: 104px;
+    transition: bottom 0.3s cubic-bezier(0.42,-0.01, 0.44, 1.27) 0.4s;
+	}
+
+	.footer-hands {
+		width: 144px;
+		transition: bottom 0.2s ease-out;
+	}
+
+	&:hover {
+		.footer-hands, .footer-head {
+			bottom: -6px;
+		}
+	}
+
+}
+
+
 
 .cards {
 
@@ -264,6 +290,7 @@ gap: 16px;
 
 		p.cta {
 			margin: auto 0 0 0;
+			text-decoration: underline;
 		}
 
 		img {
