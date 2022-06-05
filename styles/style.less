@@ -1,0 +1,314 @@
+
+// less variables
+
+@dark-grey: #2a2a33;
+@white: #ffffff;
+
+@max-width: 	840px;
+
+// general layout
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+a {
+
+	&:hover {
+		transition: transform 0.1s;
+		transform: scale(1.025);
+	}
+
+}
+
+html, body {
+	font-size: 16px;
+	width: 100%;
+	font-family: grenadine-mvb, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: @dark-grey;
+}
+p {
+	font-family: grenadine-mvb, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 24px;
+}
+
+.wrapper {
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+
+header {
+	img {
+		display: block;
+		height: 400px;
+		margin: 0 auto;
+		//border: 1px solid red;
+	}
+}
+
+header, footer, section {
+	max-width: @max-width;
+	margin: 0 auto;
+	padding: 48px 0;
+	text-align: center;
+
+	@media (max-width: 840px) {
+		margin: 0 24px;
+	}
+}
+
+// page sections
+
+.wrapper {
+	background-size: 64px;
+	background-position: center center;
+
+
+	section {
+
+	}
+}
+
+.wrapper.dark {
+	background-image: url('../assets/pattern-noise.png');
+	color: @white;
+	background-size: 256px;
+	background-position: center center;
+
+	/*p, h2 {
+
+	  text-shadow:
+		   -1px -1px 0 @dark-grey,  
+		    1px -1px 0 @dark-grey,
+		    -1px 1px 0 @dark-grey,
+		     1px 1px 0 @dark-grey;
+
+
+	}*/
+}
+
+.wrapper.stripes {
+	section {
+		background-color: @white;
+		border-radius: 24px;
+		border: 4px solid @dark-grey;
+		padding: 24px 32px;
+
+		p {
+			a {
+				color: @dark-grey;
+			}
+		}
+	}
+
+	background-image: url('../assets/pattern-stripes.png');
+	color: @dark-grey;
+	padding: 72px 0;
+}
+
+.wrapper.white {
+	background-image: none;
+}
+
+.wrapper.footer {
+	background-color: @dark-grey;
+	color: @white;
+	p {
+		font-size: 12px;
+		a {
+			color: @white;
+		}
+	}
+}
+
+nav {
+
+	padding: 32px;
+	text-align: center;
+
+	a {
+		color: @dark-grey;
+		text-decoration: none;
+
+		.logo {
+			font-family: ccsignlanguage, sans-serif;
+			font-weight: 700;
+			font-style: normal;
+			text-transform: uppercase;
+			font-size: 24px;
+		}
+	}
+		
+}
+
+header {
+
+	.button {
+		background-color: @dark-grey;
+		color: @white;
+		text-decoration: none;
+		padding: 16px 24px;
+		border-radius: 16px;
+		display: inline-block;
+		font-size: 24px;
+		font-weight: 500;
+
+		&.secondary {
+			margin-top: 16px;
+			font-size: 16px;
+			background-color: @white;
+			color: @dark-grey;
+			border: 2px solid @dark-grey;
+		}
+	}
+
+}
+
+#about {
+	section {
+		p {text-align: left;}
+	}
+}
+
+#contact {
+	ul {
+
+		padding: 0;
+
+		li {
+			display: inline-block;
+			list-style-type: none;
+			font-size: 48px;
+			padding: 0 16px;
+
+			a {
+				display: block;
+
+				img {
+					width: 64px;
+				}
+
+				&:hover {
+					transform: scale(1.2);
+				}	
+			}
+
+			
+		}
+	}
+}
+
+.cards {
+
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+padding: 24px 0;
+gap: 16px;
+
+	.card {
+		vertical-align: top;
+		list-style-type: none;
+		background: @white;
+		border-radius: 16px;
+		border: 4px solid @dark-grey;
+		color: @dark-grey;
+		text-align: left;
+		padding: 32px;
+	  flex-basis: 49%;
+	  text-decoration: none;
+	  display: flex;
+	  flex-direction: column;
+
+	  @media (max-width: 840px) {
+	  	flex-basis: 100%;
+	  }
+
+	  &.disabled {
+	  	cursor: not-allowed;
+	  	img, h3, p {
+	  		opacity: .4;
+	  	}
+	  }
+
+	  p.description {
+	  	padding-bottom: 24px;
+	  }
+
+		p.label {
+			margin: 0;
+			span {
+				min-height: 0;
+				font-size: 10px;
+				text-transform: uppercase;
+				background-color: @white;
+				padding: 0px 8px;
+				border-radius: 8px;
+				display: inline-block;
+				color: @dark-grey;
+				margin: 0;
+				border: 2px solid @dark-grey;
+				display: inline-block;
+			}
+		}
+
+		p.cta {
+			margin: auto 0 0 0;
+		}
+
+		img {
+			//border: 1px solid red;
+			width: 100%;
+		}
+	}
+}
+
+nav {
+	display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+	background-color: @white;
+
+	a[href="#header"]{
+		margin: 0 auto 0 0;
+
+		img {
+			width: 180px;
+		}
+	}
+
+	a {
+		margin: 0 0 0 24px;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+	@media (max-width: 840px) {
+
+		a[href="#header"] {
+			flex-shrink: 0;
+			margin: 0;
+			width: 100%;
+			margin: 8px 16px;
+		}	
+
+		a {
+			margin: 4px 8px;
+		}
+	}
+}
+
